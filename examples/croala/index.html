@@ -8,9 +8,9 @@
 		<title>bodin</title>
 	</head>
 	<body>
-		<div class="bodin" src="tempHtml/djurdjev_latin.html" id="latin"></div>
-		<div class="bodin" src="tempHtml/djurdjev_eng.html" id="english"></div>
-		<div class="bodin" src="tempHtml/djurdjev_hrv.html" id="croatian"></div>
+		<div class="bodin" src="tempHtml/latin.html" id="latin"></div>
+		<div class="bodin" src="tempHtml/english.html" id="english"></div>
+		<div class="bodin" src="tempHtml/croatian.html" id="croatian"></div>
 		<div class="sidecart" id="master_options"></div>
 		<!--<div id="control_view"><p>Master options.</p></div>-->
 		<div id="external_annotation"></div>
@@ -26,13 +26,13 @@
 	<script type="text/javascript" src="../../third_party/jslib/src/js/Culuh.js"></script>
 	<script type="text/javascript" src="../../third_party/sidecart/src/js/sidecart.js"></script>
 	<script type="text/javascript" src="../../src/js/Bodin.js"></script>
-	<script type="text/javascript" src="../../src/js/BodinAlign.js"></script>
+	<!--<script type="text/javascript" src="../../src/js/BodinAlign.js"></script> -->
 	<script type="text/javascript" src="../../src/js/BodinExternal.js"></script>
 	<script type="text/javascript" src="../../src/js/BodinUI.js"></script>
 	<script type="text/javascript" src="../../src/js/TeiToBodin.js"></script>
 	<script type="text/javascript" src="../../src/js/Tooltipper.js"></script>
 	<script type="text/javascript">
-	
+
 		jQuery( document ).ready( function() {
 			/*
 			jQuery( '#master_options' ).sidecart({
@@ -53,15 +53,15 @@
 			//------------------------------------------------------------
 			// initialize the external_annotation div 
 			//------------------------------------------------------------
-			jQuery( '#external_annotation').BodinExternal({
+jQuery( '#external_annotation').BodinExternal({
 				xslt_path: "../xslt/cts_annotate.xsl",
 				tokenizer: "http://sosol.perseids.org/exist/rest/db/xq/tokenize.xquery?merging=false&splitting=false&uri="
 			}).data('#external_annotation');
-			jQuery( '#external_annotation' ).click( function() { jQuery(this).toggle() } );
+			jQuery( '#external_annotation' ).click( function() { jQuery(this).toggle() } ); 
 			//------------------------------------------------------------
 			//  Once Bodin texts are loaded get the alignment XML
 			//------------------------------------------------------------
-			jQuery( window ).on( 'Bodin-LOADED', function() {
+			/*jQuery( window ).on( 'Bodin-LOADED', function() {
 				bodinAlign.start([
 					{ 
 						src: 'tempXml/eng_lat_alignment.xml', 
@@ -76,7 +76,7 @@
 						ids: { body: 'french', target: 'english' }
 					}
 				]);
-			});
+			}); */
 			//------------------------------------------------------------
 			//  Start up the UI once alignment XML is loaded
 			//------------------------------------------------------------
